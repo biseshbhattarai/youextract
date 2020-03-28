@@ -13,8 +13,8 @@ def run(url):
 	with youtube_dl.YoutubeDL(ydl_opts) as ydl:
 		try:
 			ydl.download([complete_url])
-		except:
-			pass
+		except Exception as e:
+			print(e)
 
 @app.route('/<url>/', methods=['GET'])
 def home(url):
